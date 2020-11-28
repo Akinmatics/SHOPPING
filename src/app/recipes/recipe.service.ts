@@ -8,7 +8,7 @@ export class RecipeService {
     recipeSelected = new EventEmitter<Recipe>();
     recipes: Recipe[] = [
         new Recipe(
-            'Tasty Schnitze', 'This is A super tasty Schnitze- just awesome',
+            'Tasty Schnitze', 'This is A super tasty Schnitze- Awesome',
           'https://cdn.pixabay.com/photo/2018/03/31/19/29/schnitzel-3279045_960_720.jpg',
           [
               new Ingredient('Meat', 1),
@@ -27,6 +27,10 @@ export class RecipeService {
 
       getRecipes() {
           return this.recipes.slice();
+      }
+
+      getRecipe(index: number) {
+        return this.recipes[index];
       }
 
       addIngredientsToShoppingList(ingredients: Ingredient[]) {
